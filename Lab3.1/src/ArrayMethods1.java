@@ -14,12 +14,37 @@ public class ArrayMethods1
 		{
 			System.out.print(x);
 		}
+		System.out.println();
+		int [] L2 = {2, 4, 5, 7, 1, 4, 9, 3, 6};
+		for (int x : L2)
+		{
+			System.out.print(x);
+		}
+		insertionSort(L2);
+		System.out.println();
+		for (int x : L2)
+		{
+			System.out.print(x);
+		}
 	}
 	/*Side effects of all the methods is that they will all return 
 	in ascending order, and they all return Void.*/
-	public static void insertionSort(int []L1)
+	public static void insertionSort(int []L2)
 	{
-		
+		boolean s = true;
+		while (s)
+		{
+			s = false;
+			for (int x = 0; x < L2.length - 1; x++)
+			{
+				for (int j = x + 1; j < L2.length - 1; j++)
+				if (L2[x] > (L2[j]))
+				{
+					swapInt(L2, x, j);
+				}
+				s = true;
+			}
+		}	
 	}
 	public static void selectionSort(double []L1)
 	{
