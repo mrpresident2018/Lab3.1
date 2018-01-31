@@ -3,6 +3,33 @@ public class ArrayMethods1
 {
 	public static void main (String [] args)
 	{
+		//Insertion Sort
+		int [] L2 = {2, 4, 5, 7, 1, 4, 9, 3, 6};
+		for (int y : L2)
+		{
+			System.out.print(y);
+		}
+		insertionSort(L2);
+		System.out.println();
+		for (int y : L2)
+		{
+			System.out.print(y);
+		}
+		System.out.println();
+		//Selection Sort
+		double [] L3 = {2 , 4 , 5 , 7 , 1 , 4 , 9 , 3 , 6 };
+		for (double y : L3)
+		{
+			System.out.print(y);
+		}
+		insertionSort(L2);
+		System.out.println();
+		for (double y : L2)
+		{
+			System.out.print(y);
+		}
+		System.out.println();
+		// Bubble Sort
 		String [] L1 = {"g" , "b" , "a" , "c", "d", "f", "e"};
 		for (String x : L1)
 		{
@@ -15,17 +42,6 @@ public class ArrayMethods1
 			System.out.print(x);
 		}
 		System.out.println();
-		int [] L2 = {2, 4, 5, 7, 1, 4, 9, 3, 6};
-		for (int y : L2)
-		{
-			System.out.print(y);
-		}
-		insertionSort(L2);
-		System.out.println();
-		for (int y : L2)
-		{
-			System.out.print(y);
-		}
 	}
 	/*Side effects of all the methods is that they will all return 
 	in ascending order, and they all return Void.*/
