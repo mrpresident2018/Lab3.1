@@ -1,50 +1,91 @@
+import java.util.Arrays;
+
 //Saurabh Bansal
 public class ArrayMethods1 
 {
-	public static void main (String [] args)
+	public static void main (String [] args) //Tester
 	{
+		//Testing Arrays
+		int [] L2 = {1, 4, 4, 5, 2, 4, 3, 17, 0};
+		double [] L3 = {1.1, 4.1, 4.2, 5.0, 2.0, 4.0, 3.0, 17.0, 0.0};
+		String [] L1 = {"zebra" , "tortilla" , "abba" , "foo", "bar", "aba"};
+						
 		//Insertion Sort
-		int [] L2 = {2, 4, 5, 7, 1, 4, 9, 3, 6};
 		for (int y : L2)
 		{
-			System.out.print(y);
+			System.out.print(y + "," + " ");
 		}
 		insertionSort(L2);
 		System.out.println();
 		for (int y : L2)
 		{
-			System.out.print(y);
+			System.out.print(y + "," + " ");
 		}
 		System.out.println();
+		System.out.println();
+		
 		//Selection Sort
-		double [] L3 = {2 , 4 , 5 , 7 , 1 , 4 , 9 , 3 , 6 };
+		
 		for (double y : L3)
 		{
-			System.out.print(y);
+			System.out.print(y + "," + " ");
 		}
-		insertionSort(L2);
+		selectionSort(L3);
 		System.out.println();
-		for (double y : L2)
+		for (double y : L3)
 		{
-			System.out.print(y);
+			System.out.print(y + "," + " ");
 		}
 		System.out.println();
+		System.out.println();
+		
 		// Bubble Sort
-		String [] L1 = {"g" , "b" , "a" , "c", "d", "f", "e"};
 		for (String x : L1)
 		{
-			System.out.print(x);
+			System.out.print(x + "," + " ");
 		}
 		bubbleSort(L1);
 		System.out.println();
 		for (String x : L1)
 		{
-			System.out.print(x);
+			System.out.print(x + "," + " ");
 		}
 		System.out.println();
+		System.out.println();
+		
+		//Insertion Sort Test
+		long start = System.nanoTime();
+		insertionSort(L2);
+		long end = System.nanoTime();
+		long time = end - start;
+		System.out.println("Insertion took: " + time + " nanoseconds");
+		System.out.println(Arrays.toString(L2));
+		System.out.println();
+		System.out.println();
+		
+		//Selection Sort Test
+		start = System.nanoTime();
+		selectionSort(L3);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println("Selection took: " + time + " nanoseconds");
+		System.out.println(Arrays.toString(L3));
+		System.out.println();
+		System.out.println();
+			
+		//Bubble Sort Test
+		start = System.nanoTime();
+		bubbleSort(L1);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println("Bubble took: " + time + " nanoseconds");
+		System.out.println(Arrays.toString(L1));				
 	}
+	
+	
 	/*Side effects of all the methods is that they will all return 
 	in ascending order, and they all return Void.*/
+	
 	public static void insertionSort(int []L2)
 	{
 		 for (int i = 1; i < L2.length; i++) 
@@ -58,26 +99,23 @@ public class ArrayMethods1
 	            }
 	        }
 	}
+	
 	public static void selectionSort(double []L1)
 	{
 		for(int i = 0; i < L1.length-1; i++) 
 		{
-			double m = L1[i];
 			int c = i;
 				for(int j = i; j < L1.length; j++) 
 				{
-					if(L1[j] < m) 
+					if(L1[j] < L1[c]) 
 					{
-						m = L1[j];
 						c = j;
 					}
 				}
-				if(m < L1[i]) 
-				{
-					swapDouble(L1, i, c);
-				}
+			swapDouble(L1, i, c);
 		} 	
 	}
+	
 	public static void bubbleSort(String []L1)
 	{
 		boolean f = true;
@@ -96,6 +134,7 @@ public class ArrayMethods1
 	}
 	
 	//Swap Methods
+	
 	public static void swapInt(int[]x, int in1, int in2)
 	{
 		int y = x[in1];
